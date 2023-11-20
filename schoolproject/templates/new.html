@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+<div class="container">
+  <div class="form-link mt-5 mb-5">
+    <div class="container-fluid d-flex align-items-center justify-content-center" style="min-height: 50vh;">
+      <a href="{% url 'schoolapp:student_form' %}">
+        <button class="btn btn-success btn-lg">
+          <h2>Click here to fill the Student Form</h2>
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}

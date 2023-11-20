@@ -1,0 +1,37 @@
+body {
+background-color:#7FFFD4;
+}
+
+.my_footer{
+         height:35px;
+         background-color:#006400;
+}
+
+.my_footer p{
+           padding-top:5px;
+           font-size:14px;
+}
+
+.my_image_padding {
+          padding:3px;
+}
+
+.my_title {
+           font-size : 16px;
+           letter-spacing : .2em;
+           text-transform : uppercase;
+
+}
+
+.form-container {
+    min-height: 400px; /* Adjust the value as needed */
+    margin-bottom: 50px;
+}
+
+
+.form-control {
+    width: 100%;
+}
+
+
+

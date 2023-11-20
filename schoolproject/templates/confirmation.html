@@ -1,0 +1,37 @@
+{% load static %}
+<style>
+
+    .message{
+    color:#006400;
+    text-align: center;
+    padding: 250px;
+}
+
+.return-button {
+        background-color: #006400;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+    .return-button:hover {
+        background-color: #004d00;
+    }
+</style>
+<body>
+<link rel="stylesheet"  href="{% static 'css/style.css' %}">
+<div class="container">
+  <div class="message">
+      <div>
+          <h1>{{ message }}</h1>
+      </div>
+      <div>
+          <a href="{% url 'schoolapp:index' %}" class="return-button">Return to Home Page</a>
+      </div>
+</div>
+</div>
+</body>

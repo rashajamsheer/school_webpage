@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg" style="background-color:#006400;">
+    <div class="container-fluid">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'schoolapp:index' %}" style="color:#FFFAF0;">Home</a>
+      </li>
+      <li class="nav-item dropdown {% if 'schoolapp' in request.path %} active {% endif %}">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:#FFFAF0;">
+          Department
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'schoolapp:allCourceDep' %}">All Department</a>
+          {% for dep in links %}
+          <a class="dropdown-item" href="{{ dep.wikipedia_url }}">{{dep.name}}</a>
+          {% endfor %}
+        </div>
+        </li>
+      <li class="nav-item">
+          {% if user.is_authenticated %}
+          <a  class="nav-link" style="color:#FFFAF0;">Hello {{user.username}}</a>
+      <li><a class="nav-link" href="{% url 'schoolapp:logout' %}" style="color:#FFFAF0;">Log Out</a></li>
+          {% else %}
+      <li><a class="nav-link" href="{% url 'schoolapp:register' %}" style="color:#FFFAF0;">Registration</a></li>
+         <li><a class="nav-link" href="{% url 'schoolapp:login' %}" style="color:#FFFAF0;">Log In</a></li>
+         {% endif %}
+
+      </li>
+    </ul>
+    </div>
+  </div>
+</nav>
